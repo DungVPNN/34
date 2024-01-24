@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="heading" id="heading">Heading 1</h1>
+    <h1 class="heading" id="heading">Heading 1</h1>
+
+
+    <div class="box-1">Box</div>
+    <div class="box-1">Box</div>
+    <div class="box-1">Box</div>
+    <div class="box-1">Box</div>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>STT</th>
+                <th>Ho va Ten</th>
+                <th>Tuoi</th>
+                <th>Dia chi</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+            <tr>
+                <td>1</td>
+                <td>Nguyen van A</td>
+                <td>21</td>
+                <td>Ha Noi</td>
+                <td>Abcncjs12@gmail.com</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+<h1>Event</h1>
+<button onclick="handleClick1()">Click me</button>
+<button id="btn-1">Click me 2</button>
+<script src="index.js"></script>
+<script>
+    function handleClick1() {
+        console.log("Click 1");
+    }
+
+
+    let btnElement = document.querySelector("#btn-1");
+    btnElement.onclick = function (e){
+        console.log("Click me 2", e);
+    }
+
+    let btnElement1 = document.querySelector("#btn-3");
+    btnElement1.addEventListener("click", function(){
+        console.log("click me 3");
+    });
+
+    // lay value tu input
+    let inputElement = document.querySelector("#email");
+    let heading2 = document.querySelector("#heading-2");
+// lang nghe su kien button click input input select change
+inputElement.addEventListener("input", function (event){
+    heading2.innerHTML = event.target.value;
+    console.log("Changed", event.target.value);
+});
+</script>
+</html>
